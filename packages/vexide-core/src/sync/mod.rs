@@ -3,13 +3,18 @@
 //! Types implemented here are specifically designed to mimic the standard library.
 
 mod barrier;
+mod channel;
 mod condvar;
 mod lazy;
 mod mutex;
 mod once;
 mod rwlock;
 
+pub mod mpmc;
+pub mod mpsc;
+
 pub use barrier::{Barrier, BarrierWaitFuture};
+pub use channel::{SendError, TryRecvError};
 pub use condvar::{Condvar, CondvarWaitFuture};
 pub use lazy::LazyLock;
 // Used for synchronizing stdio
